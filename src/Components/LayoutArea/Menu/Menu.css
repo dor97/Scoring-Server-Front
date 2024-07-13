@@ -1,0 +1,12 @@
+.Menu {
+	display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.Menu .active {
+    color: red;
+    font-weight: bold;
+    font-family: Arial;
+}

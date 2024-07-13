@@ -1,0 +1,11 @@
+.PostSampleImage {
+	
+}
+
+.PostSampleImage .error{
+    color: red;
+    position: absolute;
+    margin: 10px;
+    margin-left: 20px;
+    font-size: larger;
+}

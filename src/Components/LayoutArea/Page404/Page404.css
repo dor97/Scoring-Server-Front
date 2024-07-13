@@ -1,0 +1,18 @@
+.Page404 {
+	box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.Page404 > img {
+    background-size: cover;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}

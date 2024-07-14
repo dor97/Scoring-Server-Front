@@ -1,0 +1,8 @@
+.SampleImageArea {
+	
+}
+
+.SampleImageArea img {
+    width: 50%;
+    margin-bottom: 20px;
+}

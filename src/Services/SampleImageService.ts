@@ -47,8 +47,10 @@ class SampleImageService{
 
         //Extract images:
         images = response.data;
+
+        console.log(images[0]);
         
-        images.sort((im1, im2) => new Date(im1.date).getTime() - new Date(im2.date).getTime())
+        images.sort((im1, im2) => new Date(im1.date.toString()).getTime() - new Date(im2.date.toString()).getTime())
 
         //Add images to global store:
         appStore.dispatch(sampleImageActions.initAll(images));
@@ -75,6 +77,20 @@ class SampleImageService{
  
         //Return:
         return image
+    }
+
+    public async updateImage(image: SampleImageModel): Promise<void>{
+
+        //Send the image to backend:
+        const response = await axios.put<SampleImageModel>(appConfig.sampleImageUrl + image.id, image, appConfig.axiosOptions);
+
+        //Extract updated image:
+        const updatedImage = response.data;
+
+        //Update in global state:
+        appStore.dispatch(sampleImageActions.updatedOne(updatedImage));
+
+        //console.log(updatedProduct);
     }
 
 }

@@ -45,7 +45,8 @@ function deleteOne(currentState: SampleImageModel[],
 
 //sort the images
 function sortList(currentState: SampleImageModel[]){
-    return currentState.sort((im1, im2) => new Date(im1.date).getTime() - new Date(im2.date).getTime());
+    //return currentState.sort((im1, im2) => im1.date.getTime() - im2.date.getTime());
+    return currentState.sort((im1, im2) => new Date(im1.date.toString()).getTime() - new Date(im2.date.toString()).getTime());
 }
 
 //Creating the slice:

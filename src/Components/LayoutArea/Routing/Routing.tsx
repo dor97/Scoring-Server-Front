@@ -7,6 +7,7 @@ import Register from "../../AuthArea/Register/Register";
 import Login from "../../AuthArea/Login/Login";
 import PostSampleImage from "../../SampleImageArea/PostSampleImage/PostSampleImage";
 import SampleImagesList from "../../SampleImageArea/SampleImagesList/SampleImagesList";
+import EditSampleImage from "../../SampleImageArea/EditSampleImage/EditSampleImage";
 
 function Routing(): JSX.Element {
 
@@ -27,8 +28,12 @@ function Routing(): JSX.Element {
 
                 <Route path="/sampleImages" element={ <SampleImagesList/>}/>
 
-                {/* Add Products: */}
+                {/* Add Images: */}
                 <Route path="/sampleImage/post" element={<PostSampleImage />}/>
+                
+
+                {/* Edit Image: */}
+                <Route path="/sampleImages/details/:id" element={<EditSampleImage />}/>
 
                  {/* Default:
                 <Route path="/" element={ <Home /> }/> */}

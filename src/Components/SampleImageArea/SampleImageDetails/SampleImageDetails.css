@@ -1,0 +1,9 @@
+.SampleImageDetails > img {
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.SampleImageDetails > a {
+    display: block;
+    margin-top: 20px;
+}

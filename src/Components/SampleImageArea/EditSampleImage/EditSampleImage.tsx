@@ -20,11 +20,10 @@ function EditSampleImage(): JSX.Element{
         .then(dbImage => {
             console.log(dbImage)
             setValue("id", dbImage.id);
-            setValue("date", dbImage.date.split('T')[0]);
+            setValue("date", dbImage.date?.split('T')[0]);
             setValue("score", dbImage.score);
             setValue("sampleImage", dbImage.sampleImage);
             setValue("imageUrl", dbImage.imageUrl);
-            // setImg(dbProduct.imageUrl);
         })
         .catch(err => notify.error(err));
     }, [])
@@ -38,7 +37,7 @@ function EditSampleImage(): JSX.Element{
             await sampleImageService.updateImage(image);
             //alert("Image is updating");
             notify.success("Image is updating");
-            navigate("/Image");
+            navigate("/sampleImages");
         }
         catch(err : any){
             //alert(err.message);
@@ -61,7 +60,6 @@ function EditSampleImage(): JSX.Element{
                 <input type="date" {...register("date")} />
                 <span className="error">{formState.errors?.date?.message}</span>
 
-                {/* <img src={img}/> */}
                 <img src={watch("imageUrl")}/>
 
                 <button>Update</button>

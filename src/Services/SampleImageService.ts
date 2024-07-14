@@ -93,6 +93,15 @@ class SampleImageService{
         //console.log(updatedProduct);
     }
 
+    public async deleteImage(id: number) : Promise<void>{
+
+        //Delete image from server:
+        await axios.delete<SampleImageModel>(appConfig.sampleImageUrl + id);
+
+        //Delete from global state:
+        appStore.dispatch(sampleImageActions.deleteOne(id));
+   }
+
 }
 
 export const sampleImageService = new SampleImageService();

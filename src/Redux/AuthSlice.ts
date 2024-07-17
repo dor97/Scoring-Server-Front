@@ -1,16 +1,17 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { UserModel } from "../Models/UserModel";
+import { TokenDataModel } from "../Models/TokenDataModel";
 
-function initUser(currentState: UserModel,
-    action: PayloadAction<UserModel>): UserModel {
+
+function initUser(currentState: TokenDataModel,
+    action: PayloadAction<TokenDataModel>): TokenDataModel {
 
     const user = action.payload;
     const newState = user;
     return newState;
 }
 
-function removeUser(currentState: UserModel,
-    action: PayloadAction): UserModel {
+function removeUser(currentState: TokenDataModel,
+    action: PayloadAction): TokenDataModel {
     return null;
 }
 

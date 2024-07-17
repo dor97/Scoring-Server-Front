@@ -1,0 +1,11 @@
+.AuthMenu > .activate .active {
+    color: red;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.AuthMenu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}

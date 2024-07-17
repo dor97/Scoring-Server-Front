@@ -43,7 +43,7 @@ class SampleImageService{
             return images;
 
         //Fetch images from server:
-        const response = await axios.get<SampleImageModel[]>(appConfig.sampleImageUrl + "All");
+        const response = await axios.get<SampleImageModel[]>(appConfig.sampleImageUrl);
 
         //Extract images:
         images = response.data;

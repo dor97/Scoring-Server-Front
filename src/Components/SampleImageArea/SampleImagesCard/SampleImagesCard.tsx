@@ -7,6 +7,7 @@ type SampleImagesCardProps = {
 };
 
 function ImageCard(props: SampleImagesCardProps): JSX.Element {
+    
     return (
         <div className="SampleImagesCard">
 			<div>

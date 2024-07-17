@@ -38,6 +38,12 @@ function Routing(): JSX.Element {
                 {/* Edit Image: */}
                 <Route path="/sampleImages/edit/:id" element={<EditSampleImage />}/>
 
+                {/* Register */}
+                <Route path="/register" element={<Register />}/>
+
+                {/* Login */}
+                <Route path="/login" element={<Login />}/>
+
                  {/* Default:
                 <Route path="/" element={ <Home /> }/> */}
 

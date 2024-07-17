@@ -2,6 +2,8 @@ import { CredentialsModel } from "../../../Models/CredentialsModel";
 import "./Login.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { notify } from "../../../Utils/Notify";
+import { authService } from "../../../Services/AuthService";
 
 
 function Login(): JSX.Element {
@@ -11,11 +13,12 @@ function Login(): JSX.Element {
 
     async function send(credentials: CredentialsModel) {
         try{
-            
+            await authService.login(credentials);
+            notify.success("Welcome Back!");
             navigate("/home");
         }
         catch(err: any){
-
+            notify.error(err);
         }
     }
 
@@ -24,8 +27,8 @@ function Login(): JSX.Element {
         <div className="Login">
 			<form onSubmit={handleSubmit(send)}>
 
-                <label>Email:</label>
-                <input type="email" {...register("email")}/>
+                <label>User Name:</label>
+                <input type="text" {...register("userName")}/>
 
                 <label>Password:</label>
                 <input type="password" {...register("password")}/>

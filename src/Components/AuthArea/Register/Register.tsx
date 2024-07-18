@@ -7,7 +7,7 @@ import { authService } from "../../../Services/AuthService";
 
 function Register(): JSX.Element {
     
-    const {register, handleSubmit} = useForm<UserModel>();
+    const {register, handleSubmit, formState} = useForm<UserModel>();
     const navigate = useNavigate();
     
     async function send(user: UserModel) {
@@ -26,13 +26,16 @@ function Register(): JSX.Element {
 			<form onSubmit={handleSubmit(send)}>
  
                 <label>User Name:</label>
-                <input type="text" {...register("userName")}/>
+                <input type="text" {...register("userName", UserModel.userNameValidation)}/>
+                <span className="error">{formState.errors?.userName?.message}</span>
 
                 <label>Email:</label>
-                <input type="email" {...register("email")}/>
+                <input type="email" {...register("email", UserModel.emailValidation)}/>
+                <span className="error">{formState.errors?.email?.message}</span>
 
                 <label>Password:</label>
-                <input type="password" {...register("password")}/>
+                <input type="password" {...register("password", UserModel.passwardValidation)}/>
+                <span className="error">{formState.errors?.password?.message}</span>
 
                 <button>Register</button>
 

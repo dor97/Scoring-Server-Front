@@ -9,6 +9,7 @@ import PostSampleImage from "../../SampleImageArea/PostSampleImage/PostSampleIma
 import SampleImagesList from "../../SampleImageArea/SampleImagesList/SampleImagesList";
 import EditSampleImage from "../../SampleImageArea/EditSampleImage/EditSampleImage";
 import SampleImageDetails from "../../SampleImageArea/SampleImageDetails/SampleImageDetails";
+import SampleImageGraph from "../../SampleImageArea/SampleImageGraph/SampleImageGraph";
 
 function Routing(): JSX.Element {
 
@@ -37,6 +38,9 @@ function Routing(): JSX.Element {
 
                 {/* Edit Image: */}
                 <Route path="/sampleImages/edit/:id" element={<EditSampleImage />}/>
+
+                {/*Images in Graph: */}
+                <Route path="/sampleImages/graph" element={<SampleImageGraph />}/>
 
                 {/* Register */}
                 <Route path="/register" element={<Register />}/>

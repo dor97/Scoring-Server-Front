@@ -1,0 +1,25 @@
+.SampleImagesGraph{
+    width: 900px;
+    height: 350px;
+    margin: 0 auto; /* Center the graph horizontally */
+    display: flex;
+    align-items: flex-start; /* Align items to the start of the container */
+    
+}
+
+.SampleImagesGraph .graph{
+    width: 750px;
+    height: 300px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.SampleImagesGraph .point-details{
+    margin-left: 50px;
+    margin-top: 0px;
+}
+
+.SampleImagesGraph img{
+    max-width: 200px;
+    max-height: 200px;
+}

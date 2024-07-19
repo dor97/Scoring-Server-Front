@@ -6,6 +6,7 @@ import { sampleImageService } from "../../../Services/SampleImageService";
 import { notify } from "../../../Utils/Notify";
 import Spinner from "../../SharedArea/Spinner/Spinner";
 import ImageCard from "../SampleImagesCard/SampleImagesCard";
+import SampleImageGraph from "../SampleImageGraph/SampleImageGraph";
 
 
 function SampleImagesList(): JSX.Element{
@@ -21,9 +22,13 @@ function SampleImagesList(): JSX.Element{
 
     return (
         <div className="SampleImagesList">
-            <h2>Images List:</h2>
+            <h2>Images Graph:</h2>
             {images.length == 0 && <Spinner />}
 
+            <SampleImageGraph />
+            
+            <br/>
+            <h2>Images List:</h2>
 			{images.map(p => <ImageCard key={p.id} sampleImage={p}/>)}
             
         </div>
